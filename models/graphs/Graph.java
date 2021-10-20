@@ -26,6 +26,11 @@ public class Graph{
         }
     }
 
+    public void addEdge(Arc arc){
+        addArc(arc);
+        addArc(new Arc(arc.getTail(), arc.getHead()));
+    }
+
     public void addNode(Node node){
         nodeset.add(node);
     }
