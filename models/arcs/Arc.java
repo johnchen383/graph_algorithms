@@ -10,11 +10,13 @@ public class Arc{
     public Arc(Node head, Node tail){
         this.head = head;
         this.tail = tail;
+        this.weight = 1;
     }
 
     public Arc(Node head, Node tail, int weight){
         this.head = head;
         this.tail = tail;
+        this.weight = weight;
     }
 
     @Override
@@ -33,4 +35,18 @@ public class Arc{
     public Node getTail(){
         return tail;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!obj.getClass().equals(this.getClass())) return false;
+
+        Arc otherObj = (Arc) obj;
+
+        return this.head.equals(otherObj.getHead()) && this.tail.equals(otherObj.getTail());
+    }
+
+    public Integer getWeight(){
+        return weight;
+    }
+    
 }

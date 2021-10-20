@@ -1,6 +1,7 @@
 package models.graphs;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import models.arcs.Arc;
 import models.nodes.Node;
@@ -28,7 +29,7 @@ public class Graph{
 
     public void addEdge(Arc arc){
         addArc(arc);
-        addArc(new Arc(arc.getTail(), arc.getHead()));
+        addArc(new Arc(arc.getTail(), arc.getHead(), arc.getWeight()));
     }
 
     public void addNode(Node node){
@@ -70,5 +71,41 @@ public class Graph{
         printNodeSet();
         System.out.println("Arc Set:");
         printArcSet();
+    }
+
+    public int getOrder(){
+        return nodeset.size();
+    }
+
+    public int getSize(){
+        return arcset.size();
+    }
+
+    public List<Node> getNodeSet(){
+        return nodeset;
+    }
+
+    public List<Arc> getArcSet(){
+        return arcset;
+    }
+
+    public Arc getArc(Node h, Node t){
+        for (Arc arc : arcset){
+            if (arc.getHead().equals(h) && arc.getTail().equals(t)){
+                return arc;
+            }
+        }
+
+        return null;
+    }
+
+    public Node getNode(String val){
+        for (Node node : nodeset){
+            if (node.getValue().equals(val)){
+                return node;
+            }
+        }
+
+        return null;
     }
 }

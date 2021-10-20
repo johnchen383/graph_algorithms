@@ -27,6 +27,10 @@ public class Node{
         return value;
     }
 
+    public int getPriority(){
+        return priority;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (!obj.getClass().equals(this.getClass())) return false;
