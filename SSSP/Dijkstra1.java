@@ -127,4 +127,22 @@ public class Dijkstra1 {
 
         Dijkstra1.run(graph, graph.getNode(Integer.toString(0)), true);
     }
+
+    public static void runExample29_Letter(){
+        //TODO: to be completed
+        //all shown for iterations
+        Graph graph = new Graph();
+        graph.addArc('A', 'B', 3);
+        graph.addArc('B', 'A', 3);
+        graph.addArc(0, 2, 1);
+        graph.addArc(0, 3, 5);
+        graph.addArc(2, 1, 1);
+        graph.addArc(1, 3, 2);
+        graph.addArc(3, 1, 2);
+        graph.addArc(1, 4, 2);
+        graph.addArc(3, 4, 1);
+        graph.addArc(2, 4, 6);
+
+        Dijkstra1.run(graph, graph.getNode(Integer.toString(0)), true);
+    }
 }

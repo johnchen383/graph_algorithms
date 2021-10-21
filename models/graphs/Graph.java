@@ -34,6 +34,11 @@ public class Graph{
         addArc(arc);
     }
 
+    public void addArc(char head, char tail, int weight){
+        Arc arc = new Arc(new Node(String.valueOf(head), (int) head), new Node(String.valueOf(tail), (int) tail), weight);
+        addArc(arc);
+    }
+
     public void addArc(String head, int headPriority, String tail, int tailPriority, int weight){
         Arc arc = new Arc(new Node(head, headPriority), new Node(tail, tailPriority), weight);
         addArc(arc);
