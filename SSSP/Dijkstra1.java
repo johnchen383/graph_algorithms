@@ -17,13 +17,8 @@ public class Dijkstra1 {
     }
 
     public static void run(Graph graph, Node s, boolean showIterations){
-        Integer numIterations;
-
-        if (showIterations){
-            numIterations = 0;
-        } else {
-            numIterations = null;
-        }
+        Integer numIterations = null;
+        if (showIterations) numIterations = 0;
 
         Map<Node, Colour> colour = new HashMap<Node, Colour>(graph.getOrder());
         Map<Node, Integer> dist = new HashMap<Node, Integer>(graph.getOrder());
