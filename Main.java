@@ -8,8 +8,8 @@ public class Main{
     private static Graph graph;
 
     public static void main(String[] args) {
-        Dijkstra1.runExample29_10();
-        // BellmanFord.runExample31_1();
+        // Dijkstra1.runExample29_10();
+        BellmanFord.runExample31_2();
         // constructGraph();
         // graph.printGraph();
         // graph.getNodeSetWithPriority();
