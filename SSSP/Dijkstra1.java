@@ -18,6 +18,7 @@ public class Dijkstra1 {
     }
 
     public static void run(Graph graph, Node s, boolean showIterations){
+        graph.sortWithPriority();
         Integer numIterations = null;
         if (showIterations) numIterations = 0;
 

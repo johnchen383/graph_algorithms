@@ -87,9 +87,8 @@ public class Graph{
         return nodeset;
     }
 
-    public List<Node> getNodeSetWithPriority(){
+    public void sortWithPriority(){
         Collections.sort(nodeset, new NodePriorityComparator());
-        return nodeset;
     }
 
     public List<Arc> getArcSet(){

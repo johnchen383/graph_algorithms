@@ -1,3 +1,4 @@
+import SSSP.BellmanFord;
 import SSSP.Dijkstra1;
 import models.arcs.Arc;
 import models.graphs.Graph;
@@ -7,11 +8,11 @@ public class Main{
     private static Graph graph;
 
     public static void main(String[] args) {
-        // Dijkstra1.runExample29_10();
-        constructGraph();
-        graph.printGraph();
-        graph.getNodeSetWithPriority();
-        graph.printGraph();
+        BellmanFord.runExample31_1();
+        // constructGraph();
+        // graph.printGraph();
+        // graph.getNodeSetWithPriority();
+        // graph.printGraph();
     }
 
     private static void constructGraph(){
@@ -22,6 +23,6 @@ public class Main{
         graph.addArc(new Arc(new Node(0), new Node(3), 5));
         graph.addArc(new Arc(new Node(2), new Node(1), 1));
         graph.addArc(new Arc(new Node(1), new Node(4), 2));
-        graph.addArc(new Arc(new Node(3), new Node(4), 1));
+        graph.addArc(new Arc(new Node(3), new Node(-4), 1));
     }
 }
