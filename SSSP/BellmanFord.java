@@ -34,7 +34,7 @@ public class BellmanFord {
         GraphUtil.printDistance(dist, graph);
 
         for (int i = 0; i < graph.getOrder() - 1; i++){
-            numIterations++;
+            if (showIterations) numIterations++;
             if (showIterations) System.out.println("Iteration " + numIterations);
 
             for (Node x : graph.getNodeSet()){
