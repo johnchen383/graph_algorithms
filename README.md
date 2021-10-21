@@ -5,4 +5,4 @@ The following have been covered.
 
 Single Source Shortest Path (SSSP):
 - Dikstra's w/o PriorityQueue
-- 
+- Bellman Ford
