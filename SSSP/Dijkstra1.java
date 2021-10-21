@@ -7,6 +7,7 @@ import enums.Colour;
 import models.arcs.Arc;
 import models.graphs.Graph;
 import models.nodes.Node;
+import utils.GraphUtil;
 
 /**
  * Assumes: weighted, directed, no negative weights
@@ -39,7 +40,7 @@ public class Dijkstra1 {
 
         if (showIterations) System.out.println("Iteration " + numIterations);
         if (showIterations) System.out.println("Next Black: " + s);
-        printDistance(dist, graph);
+        GraphUtil.printDistance(dist, graph);
 
         colour.replace(s, Colour.BLACK);
 
@@ -70,29 +71,10 @@ public class Dijkstra1 {
                 }
             }
 
-            printDistance(dist, graph);
+            GraphUtil.printDistance(dist, graph);
         }
 
-        printFinalDistance(dist, s, graph);
-    }
-    
-    public static void printFinalDistance(Map<Node, Integer> dist, Node s, Graph graph){
-        System.out.println("Result");
-        System.out.println("Distance from node " + s);
-        printDistance(dist, graph);
-    }
-
-    public static void printDistance(Map<Node, Integer> dist, Graph graph){
-        for (Node n: graph.getNodeSet()){
-            if (dist.get(n) == Integer.MAX_VALUE){
-                System.out.print(n + ": INF \t");
-            } else {
-                System.out.print(n + ": " + Integer.toString(dist.get(n))+ "\t");
-            }
-            
-        }
-        System.out.println();
-        System.out.println();
+        GraphUtil.printFinalDistance(dist, s, graph);
     }
 
     public static Node getMinWhiteNode(Graph graph, Map<Node, Colour> colour, Map<Node, Integer> dist, boolean showIterations) {
