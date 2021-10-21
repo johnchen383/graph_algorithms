@@ -65,14 +65,14 @@ public class BellmanFord {
     public static void runExample31_1(){
         //all shown for iterations
         Graph graph = new Graph();
-        graph.addArc(new Arc(new Node(4), new Node(3), -2));
-        graph.addArc(new Arc(new Node(4), new Node(2), 1));
-        graph.addArc(new Arc(new Node(4), new Node(1), 3));
-        graph.addArc(new Arc(new Node(3), new Node(2), 2));
-        graph.addArc(new Arc(new Node(2), new Node(1), 2));
-        graph.addArc(new Arc(new Node(1), new Node(2), 1));
-        graph.addArc(new Arc(new Node(2), new Node(0), 3));
-        graph.addArc(new Arc(new Node(1), new Node(0), 0));
+        graph.addArc(4, 3, -2);
+        graph.addArc(4, 2, 1);
+        graph.addArc(4, 1, 3);
+        graph.addArc(3, 2, 2);
+        graph.addArc(2, 1, 2);
+        graph.addArc(1, 2, 1);
+        graph.addArc(2, 0, 3);
+        graph.addArc(1, 0, 0);
 
         BellmanFord.run(graph, graph.getNode(Integer.toString(4)), true);
     }

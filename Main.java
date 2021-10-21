@@ -8,7 +8,8 @@ public class Main{
     private static Graph graph;
 
     public static void main(String[] args) {
-        BellmanFord.runExample31_1();
+        Dijkstra1.runExample29_10();
+        // BellmanFord.runExample31_1();
         // constructGraph();
         // graph.printGraph();
         // graph.getNodeSetWithPriority();
@@ -17,12 +18,12 @@ public class Main{
 
     private static void constructGraph(){
         graph = new Graph();
-        graph.addArc(new Arc(new Node(2), new Node(4), 6));
-        graph.addArc(new Arc(new Node(0), new Node(1), 3));
-        graph.addArc(new Arc(new Node(0), new Node(2), 1));
-        graph.addArc(new Arc(new Node(0), new Node(3), 5));
-        graph.addArc(new Arc(new Node(2), new Node(1), 1));
-        graph.addArc(new Arc(new Node(1), new Node(4), 2));
-        graph.addArc(new Arc(new Node(3), new Node(-4), 1));
+        graph.addArc(2, 4, 6);
+        graph.addArc(0, 1, 3);
+        graph.addArc(0, 2, 1);
+        graph.addArc(0, 3, 5);
+        graph.addArc(2, 1, 1);
+        graph.addArc(1, 4, 2);
+        graph.addArc(3, -4, 1);
     }
 }

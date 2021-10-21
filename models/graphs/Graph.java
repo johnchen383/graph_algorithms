@@ -29,6 +29,16 @@ public class Graph{
         }
     }
 
+    public void addArc(int head, int tail, int weight){
+        Arc arc = new Arc(new Node(head), new Node(tail), weight);
+        addArc(arc);
+    }
+
+    public void addArc(String head, int headPriority, String tail, int tailPriority, int weight){
+        Arc arc = new Arc(new Node(head, headPriority), new Node(tail, tailPriority), weight);
+        addArc(arc);
+    }
+
     public void addEdge(Arc arc){
         addArc(arc);
         addArc(new Arc(arc.getTail(), arc.getHead(), arc.getWeight()));

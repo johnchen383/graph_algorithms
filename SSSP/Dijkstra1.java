@@ -102,12 +102,12 @@ public class Dijkstra1 {
     public static void runExample29_11(){
         //all shown for iterations
         Graph graph = new Graph();
-        graph.addArc(new Arc(new Node(0), new Node(1), 1));
-        graph.addArc(new Arc(new Node(2), new Node(1), 2));
-        graph.addArc(new Arc(new Node(1), new Node(3), 2));
-        graph.addArc(new Arc(new Node(3), new Node(0), 2));
-        graph.addArc(new Arc(new Node(0), new Node(2), 4));
-        graph.addArc(new Arc(new Node(2), new Node(3), 5));
+        graph.addArc(0, 1, 1);
+        graph.addArc(2, 1, 2);
+        graph.addArc(1, 3, 2);
+        graph.addArc(3, 0, 2);
+        graph.addArc(0, 2, 4);
+        graph.addArc(2, 3, 5);
 
         Dijkstra1.run(graph, graph.getNode(Integer.toString(3)), true);
     }
@@ -115,15 +115,16 @@ public class Dijkstra1 {
     public static void runExample29_10(){
         //all shown for iterations
         Graph graph = new Graph();
-        graph.addArc(new Arc(new Node(0), new Node(1), 3));
-        graph.addArc(new Arc(new Node(0), new Node(2), 1));
-        graph.addArc(new Arc(new Node(0), new Node(3), 5));
-        graph.addArc(new Arc(new Node(2), new Node(1), 1));
-        graph.addEdge(new Arc(new Node(1), new Node(3), 2));
-        graph.addArc(new Arc(new Node(1), new Node(4), 2));
-        graph.addArc(new Arc(new Node(3), new Node(4), 1));
-        graph.addArc(new Arc(new Node(2), new Node(4), 6));
+        graph.addArc(0, 1, 3);
+        graph.addArc(0, 2, 1);
+        graph.addArc(0, 3, 5);
+        graph.addArc(2, 1, 1);
+        graph.addArc(1, 3, 2);
+        graph.addArc(3, 1, 2);
+        graph.addArc(1, 4, 2);
+        graph.addArc(3, 4, 1);
+        graph.addArc(2, 4, 6);
 
-        Dijkstra1.run(graph, graph.getNode(Integer.toString(3)), true);
+        Dijkstra1.run(graph, graph.getNode(Integer.toString(0)), true);
     }
 }
