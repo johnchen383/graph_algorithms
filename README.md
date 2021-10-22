@@ -9,3 +9,4 @@ Single Source Shortest Path (SSSP):
 
 All Source Shortest Path (APSP):
 - Dikstra
+- Floyd (w/ Weighted Graph Properties)
