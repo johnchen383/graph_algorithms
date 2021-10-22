@@ -14,12 +14,7 @@ public class GraphUtil {
 
     public static void printDistance(Map<Node, Integer> dist, Graph graph){
         for (Node n: graph.getNodeSet()){
-            if (dist.get(n) == Integer.MAX_VALUE){
-                System.out.print(n + ": INF \t");
-            } else {
-                System.out.print(n + ": " + Integer.toString(dist.get(n))+ "\t");
-            }
-            
+            System.out.print(n + ": " + InfInteger.toString(dist.get(n))+ "\t");
         }
         System.out.println();
         System.out.println();
@@ -39,11 +34,7 @@ public class GraphUtil {
         System.out.println("Distance Matrix");
         for (int i = 0; i < dist.length; i++){
             for (int j = 0; j < dist[0].length; j++){
-                if (dist[i][j] == Integer.MAX_VALUE){
-                    System.out.print("INF \t");
-                } else {
-                    System.out.print(Integer.toString(dist[i][j])+ "\t");
-                }
+                System.out.print(InfInteger.toString(dist[i][j])+ "\t");
             }
             System.out.println();
         }
