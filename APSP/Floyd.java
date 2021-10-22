@@ -116,4 +116,16 @@ public class Floyd {
 
         Floyd.run(graph, true, true);
     }
+
+    public static void runExampleStats() {
+        Graph graph = new Graph();
+        graph.addArc(0, 1, 1);
+        graph.addArc(1, 3, 2);
+        graph.addArc(3, 0, 2);
+        graph.addArc(0, 2, 4);
+        graph.addArc(2, 1, 2);
+        graph.addArc(2, 3, 5);
+
+        Floyd.run(graph, true, true);
+    }
 }

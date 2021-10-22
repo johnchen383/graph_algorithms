@@ -14,7 +14,7 @@ public class Main{
         // BellmanFord.runExample31_2();
         // DikstraAPSP.runExample29_11();
         // constructGraph();
-        Floyd.runExampleDiagram();
+        Floyd.runExampleStats();
         // graph.printGraph();
         // graph.getNodeSetWithPriority();
         // graph.printGraph();
