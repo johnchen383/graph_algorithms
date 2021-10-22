@@ -1,4 +1,5 @@
 import APSP.DikstraAPSP;
+import APSP.Floyd;
 import SSSP.BellmanFord;
 import SSSP.Dijkstra;
 import models.arcs.Arc;
@@ -11,8 +12,9 @@ public class Main{
     public static void main(String[] args) {
         // Dijkstra1.runExample29_10();
         // BellmanFord.runExample31_2();
-        DikstraAPSP.runExample29_11();;
-        // constructGraph();
+        // DikstraAPSP.runExample29_11();
+        constructGraph();
+        Floyd.run(graph);
         // graph.printGraph();
         // graph.getNodeSetWithPriority();
         // graph.printGraph();

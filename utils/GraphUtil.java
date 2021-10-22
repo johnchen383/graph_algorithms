@@ -24,4 +24,24 @@ public class GraphUtil {
         System.out.println();
         System.out.println();
     }
+
+    public static void printDistanceMatrix(int[][] dist, Map<Node, Integer> mapping){
+        System.out.println("Mapping");
+        for (Node u : mapping.keySet()){
+            System.out.print(u + " -> " + Integer.toString(mapping.get(u)));
+        }
+        System.out.println();
+
+        System.out.println("Distance Matrix");
+        for (int i = 0; i < dist.length; i++){
+            for (int j = 0; j < dist[0].length; j++){
+                if (dist[i][j] == Integer.MAX_VALUE){
+                    System.out.print("INF \t");
+                } else {
+                    System.out.print(Integer.toString(dist[i][j])+ "\t");
+                }
+            }
+            System.out.println();
+        }
+    }
 }
