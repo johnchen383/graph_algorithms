@@ -41,7 +41,15 @@ public class Floyd {
             }
         }
 
+        int numIterations = 0;
+        if (showIterations) System.out.println("Iteration " + numIterations);
+        if (showIterations) GraphUtil.printDistanceMatrix(dist, mapping);
+
         for (Node x : graph.getNodeSet()){
+            numIterations++;
+            if (showIterations) System.out.println("Iteration " + numIterations);
+            if (showIterations) System.out.println("x = " + x);
+
             for (Node u : graph.getNodeSet()){
                 for (Node v : graph.getNodeSet()){
                     if (dist[mapping.get(u)][mapping.get(x)] == Integer.MAX_VALUE || dist[mapping.get(x)][mapping.get(v)] == Integer.MAX_VALUE){
@@ -55,9 +63,10 @@ public class Floyd {
                     }
                 }
             }
+            if (showIterations) GraphUtil.printDistanceMatrix(dist);
         }
 
-        GraphUtil.printDistanceMatrix(dist, mapping);
+        if (!showIterations) GraphUtil.printDistanceMatrix(dist);
     }
 
     public static void runExampleDiagram(){

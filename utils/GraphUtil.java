@@ -28,10 +28,14 @@ public class GraphUtil {
     public static void printDistanceMatrix(int[][] dist, Map<Node, Integer> mapping){
         System.out.println("Mapping");
         for (Node u : mapping.keySet()){
-            System.out.print(u + " -> " + Integer.toString(mapping.get(u)));
+            System.out.print(u + "->" + Integer.toString(mapping.get(u)) + "\t");
         }
         System.out.println();
 
+        printDistanceMatrix(dist);
+    }
+
+    public static void printDistanceMatrix(int[][] dist){
         System.out.println("Distance Matrix");
         for (int i = 0; i < dist.length; i++){
             for (int j = 0; j < dist[0].length; j++){
@@ -43,5 +47,6 @@ public class GraphUtil {
             }
             System.out.println();
         }
+        System.out.println();
     }
 }
