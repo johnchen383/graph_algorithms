@@ -59,4 +59,20 @@ public class Floyd {
 
         GraphUtil.printDistanceMatrix(dist, mapping);
     }
+
+    public static void runExampleDiagram(){
+        Graph graph = new Graph();
+        graph.addArc(0, 1, 3);
+        graph.addArc(1, 0, 2);
+        graph.addArc(1, 3, 2);
+        graph.addArc(3, 1, -2);
+        graph.addArc(3, 4, -3);
+        graph.addArc(2, 4, 6);
+        graph.addArc(0, 2, -1);
+        graph.addArc(2, 1, 1);
+        graph.addArc(2, 3, 4);
+        graph.addArc(3, 2, 2);
+
+        Floyd.run(graph, true);
+    }
 }

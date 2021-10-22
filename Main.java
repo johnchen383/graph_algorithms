@@ -13,8 +13,8 @@ public class Main{
         // Dijkstra1.runExample29_10();
         // BellmanFord.runExample31_2();
         // DikstraAPSP.runExample29_11();
-        constructGraph();
-        Floyd.run(graph);
+        // constructGraph();
+        Floyd.runExampleDiagram();
         // graph.printGraph();
         // graph.getNodeSetWithPriority();
         // graph.printGraph();
