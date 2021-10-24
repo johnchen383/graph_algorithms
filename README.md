@@ -5,7 +5,7 @@ The following have been covered.
 
 Single Source Shortest Path (SSSP):
 - Dijkstra w/o PriorityQueue
-- Bellman Ford
+- Bellman Ford (w/ negative weight cycle detection and printing)
 
 All Source Shortest Path (APSP):
 - Dijkstra
