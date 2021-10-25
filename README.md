@@ -10,3 +10,6 @@ Single Source Shortest Path (SSSP):
 All Source Shortest Path (APSP):
 - Dijkstra
 - Floyd (w/ Weighted Graph Properties)
+
+Minimum Spanning Tree (MST):
+- Prim
