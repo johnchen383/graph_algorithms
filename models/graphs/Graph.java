@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import comparators.ArcWeightComparator;
 import comparators.NodePriorityComparator;
 import models.arcs.Arc;
 import models.nodes.Node;
@@ -32,6 +33,16 @@ public class Graph{
     public void addArc(int head, int tail, int weight){
         Arc arc = new Arc(new Node(head), new Node(tail), weight);
         addArc(arc);
+    }
+
+    public void addEdge(int head, int tail, int weight){
+        addArc(head, tail, weight);
+        addArc(tail, head, weight);
+    }
+
+    public void addEdge(char head, char tail, int weight){
+        addArc(head, tail, weight);
+        addArc(tail, head, weight);
     }
 
     public void addArc(char head, char tail, int weight){
@@ -104,6 +115,10 @@ public class Graph{
 
     public void sortWithPriority(){
         Collections.sort(nodeset, new NodePriorityComparator());
+    }
+
+    public void sortWithWeight(){
+        Collections.sort(arcset, new ArcWeightComparator());
     }
 
     public List<Arc> getArcSet(){

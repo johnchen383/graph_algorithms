@@ -1,7 +1,9 @@
 package utils;
 
+import java.util.List;
 import java.util.Map;
 
+import models.arcs.Arc;
 import models.graphs.Graph;
 import models.nodes.Node;
 
@@ -39,5 +41,9 @@ public class GraphUtil {
             System.out.println();
         }
         System.out.println();
+    }
+
+    public static void printSetOfArcs(List<Arc> arcs){
+        System.out.println(arcs);
     }
 }

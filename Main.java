@@ -1,5 +1,6 @@
 import APSP.DikstraAPSP;
 import APSP.Floyd;
+import MST.Prim;
 import SSSP.BellmanFord;
 import SSSP.Dijkstra;
 import models.arcs.Arc;
@@ -11,7 +12,8 @@ public class Main{
 
     public static void main(String[] args) {
         // Dijkstra1.runExample29_10();
-        BellmanFord.runExample31_2();
+        // BellmanFord.runExample31_2();
+        Prim.runPrimsDiagram();
         // DikstraAPSP.runExample29_11();
         // constructGraph();
         // Floyd.runExampleStats();
