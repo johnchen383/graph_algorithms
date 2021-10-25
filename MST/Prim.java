@@ -1,10 +1,7 @@
 package MST;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Objects;
-import java.util.PriorityQueue;
 
 import models.arcs.Arc;
 import models.graphs.Graph;
@@ -26,7 +23,7 @@ public class Prim {
             Arc arc = getMinimumArc(graph, S);
             
             if (arc == null){
-                System.out.println("Exiting :(");
+                System.out.println("Some failure :(");
                 break;
             }
 
@@ -81,11 +78,7 @@ public class Prim {
         System.out.println("S = " + S);
 
         for (Arc arc : graph.getArcSet()){
-            // System.out.println("Head: " + arc.getHead() + " Tail: " + arc.getTail());
-            // System.out.println("Clause 1 " + S.contains(arc.getHead()));
-            // System.out.println("Clause 2 " + !S.contains(arc.getTail()));
             if (S.contains(arc.getHead()) && (!S.contains(arc.getTail()))){
-                System.out.println("YES");
                 return arc;
             }
         }
