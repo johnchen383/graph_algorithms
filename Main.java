@@ -1,5 +1,6 @@
 import APSP.DikstraAPSP;
 import APSP.Floyd;
+import MST.Kruskal;
 import MST.Prim;
 import SSSP.BellmanFord;
 import SSSP.Dijkstra;
@@ -13,7 +14,8 @@ public class Main{
     public static void main(String[] args) {
         // Dijkstra1.runExample29_10();
         // BellmanFord.runExample31_2();
-        Prim.runPrimsDiagram();
+        // Prim.runPrimsDiagram();
+        Kruskal.runKruskalDiagram();
         // DikstraAPSP.runExample29_11();
         // constructGraph();
         // Floyd.runExampleStats();

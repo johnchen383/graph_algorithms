@@ -31,6 +31,11 @@ public class Node{
         return priority;
     }
 
+    // @Override
+    // public int hashCode() {
+    //     return 1;
+    // }
+
     @Override
     public boolean equals(Object obj) {
         if (!obj.getClass().equals(this.getClass())) return false;
