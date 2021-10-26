@@ -19,6 +19,13 @@ public class Prim {
         List<Arc> E = new ArrayList<Arc>();
         S.add(s);
 
+        int iterationNum = 0;
+
+        if (showIterations) {
+            System.out.println("Iteration " + iterationNum);
+            GraphUtil.printSetOfArcs(E);
+        }
+
         while (S.size() < graph.getOrder()){
             Arc arc = getMinimumArc(graph, S);
             
@@ -27,13 +34,19 @@ public class Prim {
                 break;
             }
 
-            System.out.println(arc.getTail());
             S.add(arc.getTail());
             E.add(arc);
-            System.out.println(S);
+
+            if (showIterations) {
+                iterationNum++;
+                System.out.println("Iteration " + iterationNum);
+                GraphUtil.printSetOfArcs(E);
+            }
         }
 
-        GraphUtil.printSetOfArcs(E);
+        if (!showIterations) GraphUtil.printSetOfArcs(E);
+
+        GraphUtil.printMSTWeight(E);
     }
 
     public static void runPrimsDiagram(){
@@ -74,9 +87,6 @@ public class Prim {
     }
 
     private static Arc getMinimumArc(Graph graph, List<Node> S){
-        System.out.println(graph.getArcSet());
-        System.out.println("S = " + S);
-
         for (Arc arc : graph.getArcSet()){
             if (S.contains(arc.getHead()) && (!S.contains(arc.getTail()))){
                 return arc;

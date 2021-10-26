@@ -46,4 +46,12 @@ public class GraphUtil {
     public static void printSetOfArcs(List<Arc> arcs){
         System.out.println(arcs);
     }
+
+    public static void printMSTWeight(List<Arc> arcs){
+        int weight = 0;
+        for (Arc arc: arcs){
+            weight += arc.getWeight();
+        }
+        System.out.println("Minimum weight is " + Integer.toString(weight));
+    }
 }
