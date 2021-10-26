@@ -10,13 +10,18 @@ import models.Graph;
 import models.Node;
 import utils.GraphUtil;
 
-public class DFS {
+/**
+ * Note: coming down from the recursion stack is delayed by one for some reason
+ */
+public class DFSRecursive {
+    public static int time = 0;
+
     public static void run(Graph graph, boolean withIterations) {
-        Stack<Node> stack = new Stack<Node>();
         Map<Node, Colour> colour = new HashMap<Node, Colour>(graph.getOrder());
         Map<Node, Integer> seen = new HashMap<Node, Integer>(graph.getOrder());
         Map<Node, Integer> done = new HashMap<Node, Integer>(graph.getOrder());
         Map<Node, Node> pred = new HashMap<Node, Node>(graph.getOrder());
+        Stack<Node> stack = new Stack<Node>();
 
         graph.sortWithPriority();
         for (Node u : graph.getNodeSet()) {
@@ -26,13 +31,13 @@ public class DFS {
             done.put(u, null);
         }
 
-        Integer time = 0;
         int forestNum = 1;
         for (Node s : graph.getNodeSet()) {
             if (colour.get(s) == Colour.WHITE) {
                 if (withIterations)
                     System.out.println("Forest " + Integer.toString(forestNum));
-                visit(s, stack, colour, seen, done, pred, graph, withIterations, time);
+                stack.add(s);
+                visit(s, stack, colour, seen, done, pred, graph, withIterations);
             }
         }
 
@@ -40,55 +45,45 @@ public class DFS {
     }
 
     private static void visit(Node s, Stack<Node> stack, Map<Node, Colour> colour, Map<Node, Integer> seen,
-            Map<Node, Integer> done, Map<Node, Node> pred, Graph graph, boolean withIterations, Integer time) {
+            Map<Node, Integer> done, Map<Node, Node> pred, Graph graph, boolean withIterations) {
         colour.replace(s, Colour.GREY);
         seen.replace(s, time);
         time++;
-        stack.add(s);
 
-        int iterationNum = 1;
+        if (withIterations) {
+            System.out.println("Iteration at time " + Integer.toString(time));
+            System.out.println("Recursive visit " + s);
+            print(stack, colour, seen, done, pred, graph);
+            System.out.println();
+        }
 
-        while (!stack.isEmpty()) {
-            Node u = stack.peek();
-
-            Arc foundArc = null;
-            for (Node v : graph.getNodeSet()) {
-                Arc arc = graph.getArc(u, v);
-                if (arc != null && colour.get(v) == Colour.WHITE) {
-                    // exists
-                    foundArc = arc;
-                    break;
+        for (Node v : graph.getNodeSet()) {
+            Arc arc = graph.getArc(s, v);
+            if (arc != null) {
+                // exists
+                if (colour.get(v) == Colour.WHITE) {
+                    colour.replace(v, Colour.GREY);
+                    stack.add(v);
+                    visit(v, stack, colour, seen, done, pred, graph, withIterations);
                 }
             }
+        }
 
-            if (foundArc != null) {
-                Node v = graph.getNode(foundArc.getTail().getValue());
-                colour.replace(v, Colour.GREY);
-                pred.replace(v, u);
-                seen.replace(v, time);
-                time++;
-                stack.add(v);
-            } else {
-                stack.pop();
-                colour.replace(u, Colour.BLACK);
-                done.replace(u, time);
-                time++;
-                
-            }
+        stack.remove(s);
+        colour.replace(s, Colour.BLACK);
+        done.replace(s, time);
+        time++;
 
-            if (withIterations) {
-                System.out.println("Iteration " + Integer.toString(iterationNum));
-                System.out.println("Visiting " + u);
-                print(stack, colour, seen, done, pred, graph);
-                System.out.println("Time: " + Integer.toString(time));
-                System.out.println();
-                iterationNum++;
-            }
+        if (withIterations) {
+            System.out.println("Iteration at time " + Integer.toString(time));
+            System.out.println("Recursive visit " + s);
+            print(stack, colour, seen, done, pred, graph);
+            System.out.println();
         }
     }
 
-    private static void print(Stack<Node> stack, Map<Node, Colour> colour, Map<Node, Integer> seen, Map<Node, Integer> done, Map<Node, Node> pred,
-            Graph graph) {
+    private static void print(Stack<Node> stack, Map<Node, Colour> colour, Map<Node, Integer> seen,
+            Map<Node, Integer> done, Map<Node, Node> pred, Graph graph) {
         System.out.println("Stack: " + stack);
         GraphUtil.printColour(colour, graph);
         GraphUtil.printPred(pred, graph);
@@ -106,6 +101,6 @@ public class DFS {
         graph.addArc(4, 2);
         graph.addArc(3, 4);
 
-        DFS.run(graph, true);
+        DFSRecursive.run(graph, true);
     }
 }

@@ -6,6 +6,7 @@ import SSSP.BellmanFord;
 import SSSP.Dijkstra;
 import Traversal.BFS;
 import Traversal.DFS;
+import Traversal.DFSRecursive;
 import models.Arc;
 import models.Graph;
 import models.Node;
@@ -17,7 +18,7 @@ public class Main{
 
     public static void main(String[] args) {
         // BFS.runExample25_4();
-        DFS.runExample24_4();
+        DFSRecursive.runExample24_4();
         // Dijkstra1.runExample29_10();
         // BellmanFord.runExample31_2();
         // Prim.runPrimsDiagram();
