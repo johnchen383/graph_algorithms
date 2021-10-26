@@ -1,10 +1,10 @@
-# GraphTraversals
-Implementation of common graph traversals/algorithms (with Iterations shown)
+# GraphAlgorithms
+Implementation of common graph traversals/algorithms in Java
 
 The following have been covered.
 
 Single Source Shortest Path (SSSP):
-- Dijkstra w/o PriorityQueue
+- Dijkstra w/o PQ
 - Bellman Ford (w/ negative weight cycle detection and printing)
 
 All Source Shortest Path (APSP):
@@ -14,3 +14,10 @@ All Source Shortest Path (APSP):
 Minimum Spanning Tree (MST):
 - Prim
 - Kruskal (w/ Sets joining)
+
+Basic Traversals
+- BFS w/o PQ
+
+General
+- Printing Adjacency Matrix Representation
+- Printing Adjacency List Representation
