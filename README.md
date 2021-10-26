@@ -13,3 +13,4 @@ All Source Shortest Path (APSP):
 
 Minimum Spanning Tree (MST):
 - Prim
+- Kruskal
