@@ -1,6 +1,7 @@
 package MST;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 import models.arcs.Arc;
@@ -15,9 +16,9 @@ public class Prim {
 
     public static void run(Graph graph, Node s, boolean showIterations){
         graph.sortWithWeight();
-        List<Node> S = new ArrayList<Node>();
+        HashSet<Node> S = new HashSet<Node>();
         List<Arc> E = new ArrayList<Arc>();
-        S.add(s);
+        S.add(graph.getNode(s.getValue()));
 
         int iterationNum = 0;
 
@@ -34,7 +35,9 @@ public class Prim {
                 break;
             }
 
-            S.add(arc.getTail());
+            Node tail = graph.getNode(arc.getTail().getValue());
+
+            S.add(tail);
             E.add(arc);
 
             if (showIterations) {
@@ -86,9 +89,12 @@ public class Prim {
         Prim.run(graph, graph.getNode(String.valueOf(0)), true);
     }
 
-    private static Arc getMinimumArc(Graph graph, List<Node> S){
+    private static Arc getMinimumArc(Graph graph, HashSet<Node> S){
         for (Arc arc : graph.getArcSet()){
-            if (S.contains(arc.getHead()) && (!S.contains(arc.getTail()))){
+            Node head = graph.getNode(arc.getHead().getValue());
+            Node tail = graph.getNode(arc.getTail().getValue());
+
+            if (S.contains(head) && (!S.contains(tail))){
                 return arc;
             }
         }

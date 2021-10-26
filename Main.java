@@ -14,8 +14,8 @@ public class Main{
     public static void main(String[] args) {
         // Dijkstra1.runExample29_10();
         // BellmanFord.runExample31_2();
-        // Prim.runPrimsDiagram();
-        Kruskal.runKruskalDiagram();
+        Prim.runPrimsDiagram();
+        // Kruskal.runKruskalDiagram();
         // DikstraAPSP.runExample29_11();
         // constructGraph();
         // Floyd.runExampleStats();
