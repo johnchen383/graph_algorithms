@@ -128,4 +128,19 @@ public class Floyd {
 
         Floyd.run(graph, true, true);
     }
+
+    public static void runExampleTutorial() {
+        Graph graph = new Graph();
+        graph.addArc(1, 2, 3);
+        graph.addArc(1, 5, -4);
+        graph.addArc(2, 5, 7);
+        graph.addArc(2, 4, 1);
+        graph.addArc(3, 2, 4);
+        graph.addArc(4, 1, 2);
+        graph.addArc(1, 3, 8);
+        graph.addArc(4, 3, -5);
+        graph.addArc(5, 4, 6);
+
+        Floyd.run(graph, true, false);
+    }
 }

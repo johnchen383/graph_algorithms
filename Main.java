@@ -18,14 +18,14 @@ public class Main{
 
     public static void main(String[] args) {
         // BFS.runExample25_4();
-        DFSRecursive.runExample24_4();
+        // DFSRecursive.runExample24_4();
         // Dijkstra1.runExample29_10();
         // BellmanFord.runExample31_2();
         // Prim.runPrimsDiagram();
         // Kruskal.runKruskalDiagram();
         // DikstraAPSP.runExample29_11();
         // constructGraph();
-        // Floyd.runExampleStats();
+        Floyd.runExampleTutorial();
         // graph.printGraph();
         // graph.getNodeSetWithPriority();
         // graph.printGraph();
