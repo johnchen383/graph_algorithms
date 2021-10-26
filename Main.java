@@ -20,12 +20,12 @@ public class Main{
         // BFS.runExample25_4();
         // DFSRecursive.runExample24_4();
         // Dijkstra1.runExample29_10();
-        // BellmanFord.runExample31_2();
+        BellmanFord.runT11();
         // Prim.runPrimsDiagram();
         // Kruskal.runKruskalDiagram();
         // DikstraAPSP.runExample29_11();
         // constructGraph();
-        Floyd.runExampleTutorial();
+        // Floyd.runExampleTutorial();
         // graph.printGraph();
         // graph.getNodeSetWithPriority();
         // graph.printGraph();

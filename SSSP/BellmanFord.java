@@ -172,4 +172,20 @@ public class BellmanFord {
 
         BellmanFord.run(graph, graph.getNode(Integer.toString(1)), true);
     }
+
+    public static void runT11(){
+        //all shown for iterations
+        Graph graph = new Graph();
+        graph.addArc('S', 'A', 2);
+        graph.addArc('S', 'B', 10);
+        graph.addArc('B', 'A', -9);
+        graph.addArc('A', 'C', 4);
+        graph.addArc('A', 'D', 10);
+        graph.addArc('B', 'D', -8);
+        graph.addArc('C', 'D', -2);
+        graph.addArc('C', 'E', 1);
+        graph.addArc('D', 'E', 1);
+
+        BellmanFord.run(graph, graph.getNode("S"), true);
+    }
 }
