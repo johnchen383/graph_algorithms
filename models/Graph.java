@@ -33,6 +33,10 @@ public class Graph{
         addArc(arc);
     }
 
+    public void addArc(int head, int tail){
+        addArc(head, tail, 1);
+    }
+
     public void addEdge(int head, int tail, int weight){
         addArc(head, tail, weight);
         addArc(tail, head, weight);

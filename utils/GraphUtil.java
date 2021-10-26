@@ -3,6 +3,7 @@ package utils;
 import java.util.List;
 import java.util.Map;
 
+import enums.Colour;
 import models.Arc;
 import models.Graph;
 import models.Node;
@@ -53,5 +54,29 @@ public class GraphUtil {
             weight += arc.getWeight();
         }
         System.out.println("Minimum weight is " + Integer.toString(weight));
+    }
+
+    public static void printColour(Map<Node, Colour> map, Graph graph){
+        System.out.print("Colour: \t");
+        for (Node n : graph.getNodeSet()){
+            System.out.print(n + ": " + map.get(n).toString() + "\t");
+        }
+        System.out.println();
+    }
+
+    public static void printPred(Map<Node, Node> map, Graph graph){
+        System.out.print("Predecessor: \t");
+        for (Node n : graph.getNodeSet()){
+            System.out.print(n + ": " + map.get(n) + "\t");
+        }
+        System.out.println();
+    }
+
+    public static void printDist(Map<Node, Integer> map, Graph graph){
+        System.out.print("Distance: \t");
+        for (Node n : graph.getNodeSet()){
+            System.out.print(n + ": " + Integer.toString(map.get(n)) + "\t");
+        }
+        System.out.println();
     }
 }

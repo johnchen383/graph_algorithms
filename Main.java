@@ -4,6 +4,7 @@ import MST.Kruskal;
 import MST.Prim;
 import SSSP.BellmanFord;
 import SSSP.Dijkstra;
+import Traversal.BFS;
 import models.Arc;
 import models.Graph;
 import models.Node;
@@ -12,17 +13,18 @@ public class Main{
     private static Graph graph;
 
     public static void main(String[] args) {
+        BFS.runExample25_4();
         // Dijkstra1.runExample29_10();
         // BellmanFord.runExample31_2();
         // Prim.runPrimsDiagram();
         // Kruskal.runKruskalDiagram();
         // DikstraAPSP.runExample29_11();
-        constructGraph();
+        // constructGraph();
         // Floyd.runExampleStats();
         // graph.printGraph();
         // graph.getNodeSetWithPriority();
         // graph.printGraph();
-        printAdjacencyList();
+        // printAdjacencyList();
     }
 
     private static void constructGraph(){
