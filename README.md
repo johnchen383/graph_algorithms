@@ -17,6 +17,8 @@ Minimum Spanning Tree (MST):
 
 Basic Traversals
 - BFS w/o PQ
+- DFS w/o PQ
+- DFS w/o PQ (recursive)
 
 General
 - Printing Adjacency Matrix Representation
