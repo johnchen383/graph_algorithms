@@ -28,7 +28,6 @@ public class Main{
         // Floyd.runExampleTutorial();
         // graph.printGraph();
         // graph.getNodeSetWithPriority();
-        // graph.printGraph();
         // printAdjacencyList();
     }
 
