@@ -14,14 +14,15 @@ public class Main{
     public static void main(String[] args) {
         // Dijkstra1.runExample29_10();
         // BellmanFord.runExample31_2();
-        Prim.runPrimsDiagram();
+        // Prim.runPrimsDiagram();
         // Kruskal.runKruskalDiagram();
         // DikstraAPSP.runExample29_11();
-        // constructGraph();
+        constructGraph();
         // Floyd.runExampleStats();
         // graph.printGraph();
         // graph.getNodeSetWithPriority();
         // graph.printGraph();
+        printAdjacencyList();
     }
 
     private static void constructGraph(){
@@ -32,6 +33,36 @@ public class Main{
         graph.addArc(0, 3, 5);
         graph.addArc(2, 1, 1);
         graph.addArc(1, 4, 2);
-        graph.addArc(3, -4, 1);
+        graph.addArc(3, 4, 1);
+    }
+
+    private static void printAdjacencyMatrix(){
+        graph.sortWithPriority();
+        for (Node u : graph.getNodeSet()){
+            for (Node v : graph.getNodeSet()){
+                Arc arc = graph.getArc(u, v);
+                if (arc == null){
+                    System.out.print("0 \t");
+                } else{
+                    System.out.print(Integer.toString(arc.getWeight()) + "\t");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    private static void printAdjacencyList(){
+        graph.sortWithPriority();
+        for (Node u : graph.getNodeSet()){
+            System.out.print( u + " | ");
+            for (Node v : graph.getNodeSet()){
+                Arc arc = graph.getArc(u, v);
+                if (arc != null){
+                    System.out.print(v+ ", ");
+                    System.out.print(arc.getWeight()+ ", ");        //comment out if normal adjacency list
+                }
+            }
+            System.out.println();
+        }
     }
 }
