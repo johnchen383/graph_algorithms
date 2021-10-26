@@ -9,6 +9,8 @@ import models.Arc;
 import models.Graph;
 import models.Node;
 
+@SuppressWarnings("unused")
+
 public class Main{
     private static Graph graph;
 
