@@ -1,7 +1,6 @@
 package MST;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 
@@ -17,15 +16,11 @@ public class Kruskal {
 
     public static void run(Graph graph, boolean showIterations) {
         graph.sortWithWeight();
-        // HashMap<Node, ArrayList<Node>> sets = new HashMap<Node, ArrayList<Node>>();
         HashSet<HashSet<Node>> sets = new HashSet<HashSet<Node>>();
 
         List<Arc> E = new ArrayList<Arc>();
 
         for (Node n : graph.getNodeSet()) {
-            // ArrayList<Node> set = new ArrayList<Node>();
-            // set.add(n);
-            // sets.put(n, set);
             HashSet<Node> set = new HashSet<Node>();
             set.add(n);
             sets.add(set);
