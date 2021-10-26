@@ -26,7 +26,7 @@ public class DijkstraPQ {
         pq.add(s);
 
         while (!pq.isEmpty()){
-            Node u = pq.peek();
+            // Node u = pq.peek();
             // int t1 = pq.
             //TODO: incomplete
         }
