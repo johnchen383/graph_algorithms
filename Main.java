@@ -17,10 +17,10 @@ public class Main{
     private static Graph graph;
 
     public static void main(String[] args) {
-        // BFS.runExample25_4();
+        BFS.runExampleMultiForest();
         // DFSRecursive.runExample24_4();
         // Dijkstra1.runExample29_10();
-        BellmanFord.runT11();
+        // BellmanFord.runT11();
         // Prim.runPrimsDiagram();
         // Kruskal.runKruskalDiagram();
         // DikstraAPSP.runExample29_11();

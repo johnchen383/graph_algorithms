@@ -1,6 +1,7 @@
 package Traversal;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
@@ -26,15 +27,22 @@ public class BFS {
         }
 
         int forestNum = 1;
+        HashSet<Node> visitInPrevForest = new HashSet<Node>();
         for (Node s : graph.getNodeSet()) {
             if (colour.get(s) == Colour.WHITE) {
+                visit(s, q, colour, dist, pred, graph, withIterations);
+
+                //forest
                 if (withIterations)
                     System.out.println("Forest " + Integer.toString(forestNum));
-                visit(s, q, colour, dist, pred, graph, withIterations);
+                printForest(graph, pred, visitInPrevForest);
+                forestNum++;
             }
         }
 
-        if (!withIterations) print(q, colour, dist, pred, graph);
+        if (!withIterations)
+            print(q, colour, dist, pred, graph);
+
     }
 
     private static void visit(Node s, Queue<Node> q, Map<Node, Colour> colour, Map<Node, Integer> dist,
@@ -64,7 +72,7 @@ public class BFS {
             q.remove();
             colour.replace(u, Colour.BLACK);
 
-            if (withIterations){
+            if (withIterations) {
                 System.out.println("Iteration " + Integer.toString(iterationNum));
                 System.out.println("Visiting " + u);
                 print(q, colour, dist, pred, graph);
@@ -80,6 +88,42 @@ public class BFS {
         GraphUtil.printColour(colour, graph);
         GraphUtil.printDist(dist, graph);
         GraphUtil.printPred(pred, graph);
+    }
+
+    private static void printForest(Graph graph, Map<Node, Node> pred, HashSet<Node> visitInPrevForest) {
+        Graph forest = new Graph();
+        
+        for (Node n : pred.keySet()){
+            Arc arc = new Arc(pred.get(n), n);
+
+            if (pred.get(n) == null){
+                continue;
+            }
+
+            if (!visitInPrevForest.contains(n) && !visitInPrevForest.contains(pred.get(n))){
+                forest.addArc(arc);
+            }
+        }
+
+        forest.printGraph();
+
+        for (Node n : forest.getNodeSet()){
+            Node node = graph.getNode(n.getValue());
+            visitInPrevForest.add(node);
+        }
+    }
+
+    public static void runExampleMultiForest() {
+        Graph graph = new Graph();
+        graph.addArc(0, 5);
+        graph.addArc(0, 6);
+        graph.addArc(6, 7);
+        graph.addArc(1, 2);
+        graph.addArc(2, 1);
+        graph.addArc(4, 2);
+        graph.addArc(3, 4);
+
+        BFS.run(graph, true);
     }
 
     public static void runExample25_4() {
