@@ -16,9 +16,9 @@ Minimum Spanning Tree (MST):
 - Kruskal (w/ Sets joining)
 
 Basic Traversals
-- BFS w/o PQ
-- DFS w/o PQ
-- DFS w/o PQ (recursive)
+- BFS w/o PQ (w/ Forest Printing)
+- DFS w/o PQ (w/ Forest Printing)
+- DFS w/o PQ (recursive & w/ Forest Printing)
 
 General
 - Printing Adjacency Matrix Representation
