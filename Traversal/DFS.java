@@ -1,6 +1,7 @@
 package Traversal;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Stack;
 
@@ -28,11 +29,18 @@ public class DFS {
 
         Integer time = 0;
         int forestNum = 1;
+        HashSet<Node> visitInPrevForest = new HashSet<Node>();
+        
         for (Node s : graph.getNodeSet()) {
             if (colour.get(s) == Colour.WHITE) {
-                if (withIterations)
-                    System.out.println("Forest " + Integer.toString(forestNum));
                 visit(s, stack, colour, seen, done, pred, graph, withIterations, time);
+
+                // forest
+                if (withIterations) {
+                    System.out.println("Forest " + Integer.toString(forestNum));
+                    GraphUtil.printForest(graph, pred, visitInPrevForest);
+                    forestNum++;
+                }
             }
         }
 

@@ -1,5 +1,6 @@
 package utils;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
@@ -96,5 +97,28 @@ public class GraphUtil {
     public static void printDist(Map<Node, Integer> map, Graph graph) {
         System.out.print("Distance: \t");
         printIntMap(map, graph);
+    }
+
+    public static void printForest(Graph graph, Map<Node, Node> pred, HashSet<Node> visitInPrevForest) {
+        Graph forest = new Graph();
+
+        for (Node n : pred.keySet()) {
+            Arc arc = new Arc(pred.get(n), n);
+
+            if (pred.get(n) == null) {
+                continue;
+            }
+
+            if (!visitInPrevForest.contains(n) && !visitInPrevForest.contains(pred.get(n))) {
+                forest.addArc(arc);
+            }
+        }
+
+        forest.printGraph();
+
+        for (Node n : forest.getNodeSet()) {
+            Node node = graph.getNode(n.getValue());
+            visitInPrevForest.add(node);
+        }
     }
 }

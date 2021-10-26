@@ -32,11 +32,13 @@ public class BFS {
             if (colour.get(s) == Colour.WHITE) {
                 visit(s, q, colour, dist, pred, graph, withIterations);
 
-                //forest
-                if (withIterations)
+                // forest
+                if (withIterations) {
                     System.out.println("Forest " + Integer.toString(forestNum));
-                printForest(graph, pred, visitInPrevForest);
-                forestNum++;
+                    GraphUtil.printForest(graph, pred, visitInPrevForest);
+                    forestNum++;
+                }
+
             }
         }
 
@@ -88,29 +90,6 @@ public class BFS {
         GraphUtil.printColour(colour, graph);
         GraphUtil.printDist(dist, graph);
         GraphUtil.printPred(pred, graph);
-    }
-
-    private static void printForest(Graph graph, Map<Node, Node> pred, HashSet<Node> visitInPrevForest) {
-        Graph forest = new Graph();
-        
-        for (Node n : pred.keySet()){
-            Arc arc = new Arc(pred.get(n), n);
-
-            if (pred.get(n) == null){
-                continue;
-            }
-
-            if (!visitInPrevForest.contains(n) && !visitInPrevForest.contains(pred.get(n))){
-                forest.addArc(arc);
-            }
-        }
-
-        forest.printGraph();
-
-        for (Node n : forest.getNodeSet()){
-            Node node = graph.getNode(n.getValue());
-            visitInPrevForest.add(node);
-        }
     }
 
     public static void runExampleMultiForest() {
