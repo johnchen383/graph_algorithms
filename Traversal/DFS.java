@@ -75,12 +75,14 @@ public class DFS {
                 colour.replace(u, Colour.BLACK);
                 done.replace(u, time);
                 time++;
+                
             }
 
             if (withIterations) {
                 System.out.println("Iteration " + Integer.toString(iterationNum));
                 System.out.println("Visiting " + u);
                 print(stack, colour, seen, done, pred, graph);
+                System.out.println("Time: " + Integer.toString(time));
                 System.out.println();
                 iterationNum++;
             }
@@ -91,8 +93,9 @@ public class DFS {
             Graph graph) {
         System.out.println("Stack: " + stack);
         GraphUtil.printColour(colour, graph);
-        // GraphUtil.printDist(dist, graph);
         GraphUtil.printPred(pred, graph);
+        GraphUtil.printSeen(seen, graph);
+        GraphUtil.printDone(done, graph);
     }
 
     public static void runExample24_4() {
