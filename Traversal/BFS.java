@@ -12,7 +12,7 @@ import models.Node;
 import utils.GraphUtil;
 
 public class BFS {
-    public static void run(Graph graph) {
+    public static void run(Graph graph, boolean withIterations) {
         Queue<Node> q = new LinkedList<Node>();
         Map<Node, Colour> colour = new HashMap<Node, Colour>(graph.getOrder());
         Map<Node, Integer> dist = new HashMap<Node, Integer>(graph.getOrder());
@@ -25,20 +25,25 @@ public class BFS {
             dist.put(u, null);
         }
 
+        int forestNum = 1;
         for (Node s : graph.getNodeSet()) {
             if (colour.get(s) == Colour.WHITE) {
-                visit(s, q, colour, dist, pred, graph);
+                if (withIterations)
+                    System.out.println("Forest " + Integer.toString(forestNum));
+                visit(s, q, colour, dist, pred, graph, withIterations);
             }
         }
 
-        print(q, colour, dist, pred, graph);
+        if (!withIterations) print(q, colour, dist, pred, graph);
     }
 
     private static void visit(Node s, Queue<Node> q, Map<Node, Colour> colour, Map<Node, Integer> dist,
-            Map<Node, Node> pred, Graph graph) {
+            Map<Node, Node> pred, Graph graph, boolean withIterations) {
         colour.replace(s, Colour.GREY);
         dist.replace(s, 0);
         q.add(s);
+
+        int iterationNum = 1;
 
         while (!q.isEmpty()) {
             Node u = q.peek();
@@ -58,17 +63,26 @@ public class BFS {
 
             q.remove();
             colour.replace(u, Colour.BLACK);
+
+            if (withIterations){
+                System.out.println("Iteration " + Integer.toString(iterationNum));
+                System.out.println("Visiting " + u);
+                print(q, colour, dist, pred, graph);
+                System.out.println();
+                iterationNum++;
+            }
         }
     }
 
-    private static void print(Queue<Node> q, Map<Node, Colour> colour, Map<Node, Integer> dist, Map<Node, Node> pred, Graph graph) {
+    private static void print(Queue<Node> q, Map<Node, Colour> colour, Map<Node, Integer> dist, Map<Node, Node> pred,
+            Graph graph) {
         System.out.println("Queue: " + q);
         GraphUtil.printColour(colour, graph);
         GraphUtil.printDist(dist, graph);
         GraphUtil.printPred(pred, graph);
     }
 
-    public static void runExample25_4(){
+    public static void runExample25_4() {
         Graph graph = new Graph();
         graph.addArc(0, 3);
         graph.addArc(0, 1);
@@ -78,6 +92,6 @@ public class BFS {
         graph.addArc(4, 2);
         graph.addArc(3, 4);
 
-        BFS.run(graph);
+        BFS.run(graph, true);
     }
 }

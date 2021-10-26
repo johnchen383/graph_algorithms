@@ -75,6 +75,10 @@ public class GraphUtil {
     public static void printDist(Map<Node, Integer> map, Graph graph){
         System.out.print("Distance: \t");
         for (Node n : graph.getNodeSet()){
+            if (map.get(n) == null){
+                System.out.print(n + ": null\t");
+                continue;
+            }
             System.out.print(n + ": " + Integer.toString(map.get(n)) + "\t");
         }
         System.out.println();
