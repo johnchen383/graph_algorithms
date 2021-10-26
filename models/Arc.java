@@ -1,6 +1,4 @@
-package models.arcs;
-
-import models.nodes.Node;
+package models;
 
 public class Arc{
     private Node head;

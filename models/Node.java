@@ -1,4 +1,4 @@
-package models.nodes;
+package models;
 
 public class Node{
     private String value;
@@ -30,11 +30,6 @@ public class Node{
     public int getPriority(){
         return priority;
     }
-
-    // @Override
-    // public int hashCode() {
-    //     return 1;
-    // }
 
     @Override
     public boolean equals(Object obj) {

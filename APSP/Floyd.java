@@ -6,9 +6,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import models.arcs.Arc;
-import models.graphs.Graph;
-import models.nodes.Node;
+import models.Arc;
+import models.Graph;
+import models.Node;
 import utils.GraphUtil;
 import utils.InfInteger;
 

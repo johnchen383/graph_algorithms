@@ -1,8 +1,8 @@
 package APSP;
 
 import SSSP.Dijkstra;
-import models.graphs.Graph;
-import models.nodes.Node;
+import models.Graph;
+import models.Node;
 
 /**
  * Assumes: weighted, directed, no negative weights

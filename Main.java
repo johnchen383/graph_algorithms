@@ -4,9 +4,9 @@ import MST.Kruskal;
 import MST.Prim;
 import SSSP.BellmanFord;
 import SSSP.Dijkstra;
-import models.arcs.Arc;
-import models.graphs.Graph;
-import models.nodes.Node;
+import models.Arc;
+import models.Graph;
+import models.Node;
 
 public class Main{
     private static Graph graph;

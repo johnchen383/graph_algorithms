@@ -2,7 +2,7 @@ package comparators;
 
 import java.util.Comparator;
 
-import models.nodes.Node;
+import models.Node;
 
 public class NodePriorityComparator implements Comparator<Node>{
     @Override

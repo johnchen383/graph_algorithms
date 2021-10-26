@@ -2,7 +2,7 @@ package comparators;
 
 import java.util.Comparator;
 
-import models.arcs.Arc;
+import models.Arc;
 
 public class ArcWeightComparator implements Comparator<Arc>{
     @Override

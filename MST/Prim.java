@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-import models.arcs.Arc;
-import models.graphs.Graph;
-import models.nodes.Node;
+import models.Arc;
+import models.Graph;
+import models.Node;
 import utils.GraphUtil;
 
 public class Prim {

@@ -3,9 +3,9 @@ package utils;
 import java.util.List;
 import java.util.Map;
 
-import models.arcs.Arc;
-import models.graphs.Graph;
-import models.nodes.Node;
+import models.Arc;
+import models.Graph;
+import models.Node;
 
 public class GraphUtil {
     public static void printFinalDistance(Map<Node, Integer> dist, Node s, Graph graph){

@@ -3,7 +3,7 @@ package comparators;
 import java.util.Comparator;
 import java.util.Map;
 
-import models.nodes.Node;
+import models.Node;
 
 public class NodeDistComparator implements Comparator<Node>{
     Map<Node, Integer> dist;

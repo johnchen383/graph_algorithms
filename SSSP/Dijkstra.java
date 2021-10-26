@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import enums.Colour;
-import models.arcs.Arc;
-import models.graphs.Graph;
-import models.nodes.Node;
+import models.Arc;
+import models.Graph;
+import models.Node;
 import utils.GraphUtil;
 
 /**

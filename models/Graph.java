@@ -1,4 +1,4 @@
-package models.graphs;
+package models;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,8 +6,6 @@ import java.util.List;
 
 import comparators.ArcWeightComparator;
 import comparators.NodePriorityComparator;
-import models.arcs.Arc;
-import models.nodes.Node;
 
 public class Graph{
     ArrayList<Arc> arcset;
