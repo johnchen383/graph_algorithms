@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-import comparators.NodeDistComparator;
+import comparators.NodePQComparator;
 import enums.Colour;
 import models.Graph;
 import models.Node;
@@ -16,7 +16,7 @@ public class DijkstraPQ {
     public static void run(Graph graph, Node s){
         Map<Node, Colour> colour = new HashMap<Node, Colour>(graph.getOrder());
         Map<Node, Integer> dist = new HashMap<Node, Integer>(graph.getOrder());
-        PriorityQueue<Node> pq = new PriorityQueue<Node>(graph.getOrder(), new NodeDistComparator(dist));
+        PriorityQueue<Node> pq = new PriorityQueue<Node>(graph.getOrder(), new NodePQComparator(dist));
 
         //initialise
         for (Node u: graph.getNodeSet()){

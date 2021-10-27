@@ -19,7 +19,7 @@ public class Main{
     public static void main(String[] args) {
         // BFS.runExampleMultiForest();
         // DFSRecursive.runExampleMultiForest();
-        DFS.runExampleMultiForest();
+        // DFS.runExampleMultiForest();
         // Dijkstra1.runExample29_10();
         // BellmanFord.runT11();
         // Prim.runPrimsDiagram();
