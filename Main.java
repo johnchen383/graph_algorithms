@@ -17,8 +17,9 @@ public class Main{
     private static Graph graph;
 
     public static void main(String[] args) {
-        BFS.runExampleMultiForest();
-        // DFSRecursive.runExample24_4();
+        // BFS.runExampleMultiForest();
+        // DFSRecursive.runExampleMultiForest();
+        DFS.runExampleMultiForest();
         // Dijkstra1.runExample29_10();
         // BellmanFord.runT11();
         // Prim.runPrimsDiagram();

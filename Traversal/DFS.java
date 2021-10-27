@@ -30,7 +30,7 @@ public class DFS {
         Integer time = 0;
         int forestNum = 1;
         HashSet<Node> visitInPrevForest = new HashSet<Node>();
-        
+
         for (Node s : graph.getNodeSet()) {
             if (colour.get(s) == Colour.WHITE) {
                 visit(s, stack, colour, seen, done, pred, graph, withIterations, time);
@@ -109,6 +109,19 @@ public class DFS {
         graph.addArc(0, 3);
         graph.addArc(0, 1);
         graph.addArc(1, 3);
+        graph.addArc(1, 2);
+        graph.addArc(2, 1);
+        graph.addArc(4, 2);
+        graph.addArc(3, 4);
+
+        DFS.run(graph, true);
+    }
+
+    public static void runExampleMultiForest() {
+        Graph graph = new Graph();
+        graph.addArc(0, 5);
+        graph.addArc(0, 6);
+        graph.addArc(6, 7);
         graph.addArc(1, 2);
         graph.addArc(2, 1);
         graph.addArc(4, 2);
