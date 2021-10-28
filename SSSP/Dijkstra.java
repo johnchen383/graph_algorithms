@@ -39,7 +39,7 @@ public class Dijkstra {
         dist.replace(s, 0);
 
         if (showIterations) System.out.println("Iteration " + numIterations);
-        if (showIterations) System.out.println("Next Black: " + s);
+        if (showIterations) System.out.println("Black: " + s);
         if (showIterations) GraphUtil.printDistance(dist, graph);
 
         colour.replace(s, Colour.BLACK);
@@ -48,7 +48,7 @@ public class Dijkstra {
         while ((u = getMinWhiteNode(graph, colour, dist, showIterations)) != null){
             if (showIterations) numIterations++;
             if (showIterations) System.out.println("Iteration " + numIterations);
-            if (showIterations) System.out.println("Next Black: " + u);
+            if (showIterations) System.out.println("Black: " + u);
 
             colour.replace(u, Colour.BLACK);
 

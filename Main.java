@@ -21,7 +21,7 @@ public class Main{
         // BFS.runExampleMultiForest();
         // DFSRecursive.runExampleMultiForest();
         // DFS.runExampleMultiForest();
-        // Dijkstra1.runExample29_10();
+        Dijkstra.runExample29_10();
         // BellmanFord.runT11();
         // Prim.runPrimsDiagram();
         // Kruskal.runKruskalDiagram();
@@ -31,7 +31,7 @@ public class Main{
         // graph.printGraph();
         // graph.getNodeSetWithPriority();
         // printAdjacencyList();
-        General.runT7Example();
+        // General.runT7Example();
     }
 
     private static void constructGraph(){
