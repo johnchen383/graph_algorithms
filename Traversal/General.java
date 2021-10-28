@@ -55,6 +55,7 @@ public class General {
             for (Node v : graph.getNodeSet()){
                 if (colour.get(v).equals(Colour.GREY)){
                     u = v;
+                    break;
                 }
             }
 
