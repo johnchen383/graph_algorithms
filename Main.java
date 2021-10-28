@@ -7,6 +7,7 @@ import SSSP.Dijkstra;
 import Traversal.BFS;
 import Traversal.DFS;
 import Traversal.DFSRecursive;
+import Traversal.General;
 import models.Arc;
 import models.Graph;
 import models.Node;
@@ -30,6 +31,7 @@ public class Main{
         // graph.printGraph();
         // graph.getNodeSetWithPriority();
         // printAdjacencyList();
+        General.runT7Example();
     }
 
     private static void constructGraph(){
