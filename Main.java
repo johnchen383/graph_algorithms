@@ -18,23 +18,10 @@ public class Main{
     private static Graph graph;
 
     public static void main(String[] args) {
-        // BFS.runExampleMultiForest();
-        // DFSRecursive.runExampleMultiForest();
-        // DFS.runExampleMultiForest();
-        Dijkstra.runExample29_10();
-        // BellmanFord.runT11();
-        // Prim.runPrimsDiagram();
-        // Kruskal.runKruskalDiagram();
-        // DikstraAPSP.runExample29_11();
-        // constructGraph();
-        // Floyd.runExampleTutorial();
-        // graph.printGraph();
-        // graph.getNodeSetWithPriority();
-        // printAdjacencyList();
-        // General.runT7Example();
+        //run commands here
     }
 
-    private static void constructGraph(){
+    private static void constructGraphBackup(){
         graph = new Graph();
         graph.addArc(2, 4, 6);
         graph.addArc(0, 1, 3);

@@ -1,0 +1,55 @@
+private static void lastMin(){
+        graph = new Graph();
+        graph.addArc(0, 1);
+        graph.addArc(1, 2);
+        graph.addArc(2, 0);
+        graph.addArc(3, 1);
+        graph.addArc(4, 3);
+        graph.addArc(5, 3);
+        graph.addArc(6, 5);
+        graph.addArc(5, 6);
+        graph.addArc(2, 6);
+        Floyd.run(graph, false, true);
+
+    }
+
+    private static void lastMin2(){
+        graph = new Graph();
+        graph.addEdge(0, 1, 1);
+        graph.addEdge(1, 2, 1);
+        graph.addEdge(2, 0, 1);
+        graph.addEdge(3, 1, 1);
+        graph.addEdge(4, 3, 1);
+        graph.addEdge(5, 3, 1);
+        graph.addEdge(5, 6, 1);
+        graph.addEdge(2, 6, 1);
+        Floyd.run(graph, false, true);
+
+    }
+    private static void DFSTopo(){
+        graph = new Graph();
+        graph.addArc(0, 5, 1);
+        graph.addArc(2, 0, 1);
+        graph.addArc(0, 1, 1);
+        graph.addArc(5, 1, 1);
+        graph.addArc(3, 4, 1);
+        graph.addArc(1, 4, 1);
+        graph.addArc(3, 1, 1);
+        graph.addArc(2, 3, 1);
+        DFSRecursive.run(graph, true);
+    }
+
+    private static void BellmanFord(){
+        graph = new Graph();
+        graph.addArc('a', 'd', 3);
+        graph.addArc('a', 'c', 7);
+        graph.addArc('a', 'b', -1);
+        graph.addArc('c', 'd', 2);
+        graph.addArc('c', 'e', -3);
+        graph.addArc('c', 'b', 3);
+        graph.addArc('d', 'e', 2);
+        graph.addArc('e', 'f', 2);
+        graph.addArc('b', 'f', 5);
+        BellmanFord.run(graph, graph.getNode("a"));
+
+    }
