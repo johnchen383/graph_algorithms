@@ -19,6 +19,7 @@ Basic Traversals
 - BFS w/o PQ (w/ Forest Printing)
 - DFS w/o PQ (w/ Forest Printing)
 - DFS w/o PQ (recursive & w/ Forest Printing)
+- General Traversal
 
 General
 - Printing Adjacency Matrix Representation
