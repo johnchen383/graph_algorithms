@@ -1,5 +1,5 @@
 # GraphAlgorithms
-Implementation of common graph traversals/algorithms in Java
+Implementation of common graph traversals/algorithms in Java. To soldify understanding of concepts taught in class.
 
 The following have been covered.
 
