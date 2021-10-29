@@ -1,5 +1,5 @@
 # GraphAlgorithms
-Implementation of common graph traversals/algorithms in Java. To soldify understanding of concepts taught in class.
+Implementation of common graph traversals/algorithms in Java. To solidify understanding of concepts taught in class. Note that emphasis here was not on optimal performance but rather replicating the pseudocode often used with these graph traversals / algorithms. In the future, I may revisit such implementations to match runtime performance as well as implementing others (e.g. PFS)
 
 The following have been covered.
 
